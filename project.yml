@@ -1,12 +1,66 @@
 settings:
-  name: "Product Name"
+  name: Azure Blob storage
+  platform: cloud
   internal:
     pdf_enabled: true
   prod:
     pdf_enabled: true
     harmony_enabled: true
+  rss_page: "whats-new.html"
 
-sidebar: 
+sidebar:
   entries:
-  - title: Legal notices
-    url: /legal-notices.html
+    - title: Azure Blob storage docs
+      url: /index.html
+    - title: Release notes
+      url: /whats-new.html
+    - title: Get started
+      entries:
+        - title: View your Azure Blob storage accounts
+          url: /task-view-azure-blob-storage.html
+    - title: Manage Azure Blob storage accounts
+      entries:
+        - title: Add new storage accounts
+          url: /task-add-blob-storage.html
+        - title: Change storage accounts settings
+          url: /task-change-blob-storage-settings.html
+        - title: Use NetApp data services with Azure Blob storage
+          url: /task-blob-enable-data-services.html
+    - title: Knowledge and support
+      entries:
+        - title: Register for support
+          url: /task-support-registration.html
+        - title: Get help
+          url: /task-get-help.html
+    - title: Legal notices
+      url: /legal-notices.html
+product-family:
+  name: BlueXP
+  repo: bluexp-family
+  sidebar_label: All BlueXP documentation
+homepage:
+  tiles:
+    - title: Get started
+      links:
+        - title: View your Azure Blob storage accounts
+          url: task-view-azure-blob-storage.html
+    - title: Manage Azure Blob storage accounts
+      links:
+        - title: Add Blob storage accounts
+          url: task-add-blob-storage.html
+        - title: Change storage account settings
+          url: task-change-blob-storage-settings.html
+        - title: Use NetApp data services with Azure Blob storage
+          url: task-blob-enable-data-services.html
+    - title: More information
+      links:
+        - title: Azure Blob storage documentation for management outside of BlueXP
+          url: https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction
+    - title: Blogs & community
+      links:
+        - title: NetApp Community
+          url: https://community.netapp.com/t5/BlueXP-and-Services/ct-p/CDS
+        - title: BlueXP blog
+          url: https://bluexp.netapp.com/blog/topic/cloud-manager
+        - title: Cloud webinars
+          url: https://bluexp.netapp.com/events

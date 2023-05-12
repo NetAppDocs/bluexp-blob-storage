@@ -1,0 +1,46 @@
+---
+sidebar: sidebar
+permalink: task-view-azure-blob-storage.html
+keywords: blob storage, blob working environment, azure blob storage accounts, azure blob working environment
+summary: After you install a Connector in Azure, BlueXP can automatically discover information about the Azure storage accounts that reside in the Azure Subscriptions where the Connector is installed. An Azure Blob working environment is added to the Canvas so you can view this information.
+---
+
+= View your Azure Blob storage accounts
+:hardbreaks:
+:nofooter:
+:icons: font
+:linkattrs:
+:imagesdir: ./media/
+
+[.lead]
+After you install a Connector in Azure, BlueXP can automatically discover information about the Azure storage accounts that reside in the Azure Subscriptions where the Connector is installed. An Azure Blob working environment is added to the Canvas so you can view this information.
+
+You can see details about your Azure storage accounts, including the location, resource group, used capacity, and more. These accounts can be used as destinations for BlueXP backup and recovery, BlueXP tiering, or BlueXP copy and sync operations.
+
+.Steps
+
+. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html[Install a Connector^] in the Azure account where you want to view your Azure Blob storage accounts.
+
+. From the navigation menu, select *Storage > Canvas*.
++
+You should automatically see an Azure Blob Storage working environment shortly after.
++
+image:screenshot-azure-blob-we.png[A screenshot of an Azure Blob Storage working environment.]
+
+. Select the working environment and select an action from the right pane if you want to enable BlueXP services with your Azure Blob storage.
++
+image:screenshot-azure-blob-actions.png["A screenshot that shows the actions pane after you select an Azure Blob Storage working environment. The pane shows the total number of storage accounts and an action for using the BlueXP services."]
++
+link:task-blob-enable-data-services.html[See which BlueXP services are available and learn how to use them with your Azure Blob Storage accounts].
+
+. Select *Enter Working Environment*, or double-click the working environment, to view details about the Azure storage accounts.
++
+image:screenshot-azure-blob-details.png["A screenshot that shows the details of an Azure Blob working environment: the total number of storage accounts, total number of locations, resource groups, total capacity, and more."]
++
+In addition to the columns that appear by default, you can scroll the page to view additional properties for the storage account; for example, the number of tags, and the type of encryption that has been enabled.
+
+.What's next
+
+You can change some storage account settings directly from BlueXP by clicking image:button-horizontal-more.gif[the three dots more button] for a storage account. link:task-change-blob-storage-settings.html[Go here for details].
+
+You can add new buckets by clicking *Add storage account*. link:task-add-blob-storage.html[Go here for details].
