@@ -49,7 +49,7 @@ https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage
 
 | Storage account name | Enter the name you want to use for the storage account. The name must be between 3 and 24 characters in length, and it can contain numbers and lowercase letters only.
 
-| Region a| Select a region from the list where the storage account will be created.
+| Azure Region a| Select a region from the list where the storage account will be created.
 
 Select the appropriate region for your storage account. https://learn.microsoft.com/en-us/azure/availability-zones/az-overview[See the Microsoft documentation for information about Azure regions and availability zones^].
 
@@ -65,70 +65,25 @@ _Premium_ performance is used for scenarios that require low latency. There are 
 
 |===
 
+. In the _Tags_ section, enter up to 10 tag key/value pairs to group your resources. 
 
+Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. You can add tags to a storage account so that the tags are applied to objects when they are added to the storage account.
 
+Tags are disabled by default in new storage account created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
 
-. In the _Storage class_ section, select the storage class that will be used for objects in your bucket. You can select from among four storage classes, or you can select _Autoclass_ to have Google adjust the class as needed.
-+
-[cols=2*,options="header",cols="25,75"]
-|===
-| Storage class
-| Description
-
-| Standard | Standard storage is best for data that is frequently accessed ("hot" data) and/or stored for only brief periods of time.
-
-| Nearline | Nearline storage is a low-cost, highly durable storage service for storing infrequently accessed data.
-
-| Coldline | Coldline storage is a very-low-cost, highly durable storage service for storing infrequently accessed data.
-
-| Archive | Archive storage is the lowest-cost, highly durable storage service for data archiving, online backup, and disaster recovery.
-
-| Autoclass | Autoclass automatically transitions objects in your bucket to the appropriate storage classes based on each object's access pattern.
-
-|===
-+
-The cost and retrieval fees are different for each storage class. https://cloud.google.com/storage/docs/storage-classes[See the Google Cloud documentation for more information about storage classes^].
-
-. In the _Protection tools_ section, choose whether you want to use any data protection tools to protect objects in the bucket, or data encryption settings to protect access to your data.
-+
-[cols=2*,options="header",cols="25,75"]
-|===
-| Protection tool type
-| Description
-
-| None |  By default, no protection tools are enabled on the bucket.
-
-| Object versioning a| The bucket will retain a noncurrent object version each time you update, replace, or delete a live object version - continuously maintaining a protected version of the object. When you select "Object versioning" you can specify two options:
-
-* *Max. num. of versions per object* - Enter the number of noncurrent versions per object that will be created. 
-* *Expire noncurrent versions after* - Enter the number of days after which the older, noncurrent objects will be removed. 
-
-| Retention policy a| A retention policy ensures that all current and future objects in the bucket cannot be deleted or replaced until they reach the age you define in the retention policy. When you select "Retention policy" you can specify two options:
-
-* *Retain objects for* - Enter the number of seconds, days, months, or years that objects will be retained.
-* *Time frame* - Select whether the time is in seconds, days, months, or years. 
-
-|===
-+
-The object versioning and retention policy protection tools can't be enabled at the same time. See the Google Cloud documentation for https://cloud.google.com/storage/docs/object-versioning[more information about object versioning^], and https://cloud.google.com/storage/docs/bucket-lock[more information about retention policies^].
+. In the _Encryption_ section, choose the type of data encryption you want to use to protect access to your data.
 +
 [cols=2*,options="header",cols="25,75"]
 |===
 | Data encryption type
 | Description
 
-| Google-managed encryption key | By default, Google-managed encryption keys are used to used to encrypt your data. 
+| Microsoft-managed keys | By default, Microsoft-managed encryption keys are used to used to encrypt your data. 
 
-| Customer-managed encryption key (CMEK)  | You can use your own customer-managed keys for data encryption instead of using the default Google-managed encryption keys. If you're planning to use your own customer-managed keys you'll need to have the Key Ring and the Key Name so you can add this information in the activation wizard. Learn more about customer-managed encryption keys.
+| Customer-managed keys | You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have the Key Vault and the Keys so you can add this information in the activation wizard.
 
 |===
 +
-See the Google Cloud documentation for https://cloud.google.com/storage/docs/encryption/default-keys[more information about Google-managed encryption keys^], and https://cloud.google.com/storage/docs/encryption/customer-managed-keys[more information about Customer-managed encryption keys^].
+See the Microsoft Azure documentation for https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption[more information about Microsoft-managed keys^], and https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[more information about Customer-managed keys^].
 
-
-.. to create the bucket and click *Add* The bucket is created.
-
-.What's next
-
-You can't manually configure Versioning, Tags, or Encryption when initially adding a bucket. After the bucket is created you can configure these other properties of the bucket. link:task-change-s3-bucket-settings.html[Learn more about changing bucket settings].
-
+. Click *Add* and the bucket is created.
