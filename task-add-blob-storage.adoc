@@ -66,9 +66,9 @@ _Premium_ performance is used for scenarios that require low latency. There are 
 |===
 
 . In the _Tags_ section, enter up to 10 tag key/value pairs to group your resources. 
-
++
 Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. You can add tags to a storage account so that the tags are applied to objects when they are added to the storage account.
-
++
 Tags are disabled by default in new storage account created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
 
 . In the _Encryption_ section, choose the type of data encryption you want to use to protect access to your data.

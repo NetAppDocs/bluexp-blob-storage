@@ -27,17 +27,35 @@ You can change these bucket settings directly from BlueXP by clicking image:butt
 
 image:screenshot-edit-amazon-s3-bucket.png[A screenshot showing how to select the Manager Details button to edit bucket properties.]
 
-== Change the versioning setting
+== Change the Project details
 
-Versioning enables you to keep multiple versions of an object in a bucket so that you can restore objects that are accidentally deleted or overwritten. You can change the versioning setting for future objects when they are added to the bucket. Changing the versioning setting does not change the value for existing objects.
+. Enter the required information in the _Project details_ section.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Field
+| Description
 
-Versioning is disabled by default in new buckets created by BlueXP, unless you enabled Object Lock when you created the bucket. https://docs.aws.amazon.com/AmazonS3/latest/userguide/Versioning.html[Learn more about versioning from the Amazon S3 documentation^].
+| Subscription | Select the Azure subscription for the new storage account.
 
-Once enabled, if you want to stop versioning temporarily or permanently, you can choose the "Suspended" state. You can't disable versioning once it has been enabled.
+| Resource group a| Select an existing resource group for this storage account, or create a new one. 
 
-image:screenshot-amazon-s3-versioning.png[A screenshot showing how to change the versioning setting for a bucket.]
+https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal[Learn more about resource groups^].
+
+|===
+
+. Click *Save* and the changes to the bucket are submitted.
 
 == Add or change tags for objects in the bucket
+
+. In the _Tags_ section, enter up to 10 tag key/value pairs to group your resources. 
++
+Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. You can add tags to a storage account so that the tags are applied to objects when they are added to the storage account.
++
+Tags are disabled by default in new storage account created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
+
+. Click *Save* and the changes to the bucket are submitted.
+
 
 Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. Tags consists of a tag key and a tag value. You can add tags to a bucket so that the tags are applied to objects when they are added to the bucket. You can also change and delete tags and tag values.
 
@@ -48,6 +66,25 @@ image:screenshot-amazon-s3-tags.png["A screenshot showing how to add a new tag k
 After you add a tag, click *Apply* to save your changes. If you want to add more tags, click *Add new tag*. You can add up to 10 tags per bucket.
 
 == Change the encryption setting
+
+. In the _Encryption_ section, choose the type of data encryption you want to use to protect access to your data.
++
+[cols=2*,options="header",cols="25,75"]
+|===
+| Data encryption type
+| Description
+
+| Microsoft-managed keys | By default, Microsoft-managed encryption keys are used to used to encrypt your data. 
+
+| Customer-managed keys | You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have the Key Vault and the Keys so you can add this information in the activation wizard.
+
+|===
++
+See the Microsoft Azure documentation for https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption[more information about Microsoft-managed keys^], and https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[more information about Customer-managed keys^].
+
+. Click *Save* and the changes to the bucket are submitted.
+
+
 
 Server-side encryption enables you to encrypt data at the Amazon S3 destination. Amazon S3 encrypts your data at the object level as it writes it to disk, and it decrypts it for you when you access it. You can change the encryption setting used for future objects when they are added to the bucket.
 
