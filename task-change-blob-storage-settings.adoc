@@ -15,60 +15,49 @@ summary: Once your Azure Blob Storage working environment is available in the Ca
 [.lead]
 Once your Azure Blob Storage working environment is available in the Canvas, you can change some storage account properties directly from BlueXP.
 
-Note that you can't change the bucket name, AWS account, region, or object lock setting.
+Note that you can't change the storage account name, Azure region, or the performance type of the storage.
 
-The bucket properties you can change include:
+The storage account properties you can change include:
 
-* Whether Versioning is enabled or disabled for all objects in the bucket.
-* You can choose to apply tags to the objects that are added to the bucket.
-* Whether or not new objects added to the bucket are Encrypted, and the option used for encryption.
+* The Subscription and Resource Group for the storage account.
+* Add, change, or remove tags for the objects that are added to the storage account.
+* Whether or not new objects added to the storage account are encrypted, and the option used for encryption.
 
-You can change these bucket settings directly from BlueXP by clicking image:button-horizontal-more.gif[the three dots more button] > *Manage details* for a bucket.
+You can change these storage account settings directly from BlueXP by clicking image:button-horizontal-more.gif[the three dots more button] for a storage account.
 
-image:screenshot-edit-amazon-s3-bucket.png[A screenshot showing how to select the Manager Details button to edit bucket properties.]
+image:screenshot-edit-azure-blob-storage.png[A screenshot showing how to edit storage account properties from BlueXP.]
 
 == Change the Project details
 
-. Enter the required information in the _Project details_ section.
-+
+In the _Project details_ section you can change the Subscription and the Resource group for the storage account.
+
 [cols=2*,options="header",cols="25,75"]
 |===
 | Field
 | Description
 
-| Subscription | Select the Azure subscription for the new storage account.
+| Subscription | Select a different Azure subscription for the storage account.
 
-| Resource group a| Select an existing resource group for this storage account, or create a new one. 
+| Resource group a| Select a different resource group for the storage account. 
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal[Learn more about resource groups^].
 
 |===
 
-. Click *Save* and the changes to the bucket are submitted.
+Click *Save* to save the changes to the storage account.
 
-== Add or change tags for objects in the bucket
+== Add or change tags for objects in the storage account
 
-. In the _Tags_ section, enter up to 10 tag key/value pairs to group your resources. 
-+
-Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. You can add tags to a storage account so that the tags are applied to objects when they are added to the storage account.
-+
-Tags are disabled by default in new storage account created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
+In the _Tags_ section you can add up to 10 tag key/value pairs, or you can change or delete a tag key/value pair. Tags are applied to objects when they are added to the storage account. If you want to add more tags, click *Add new tag*.
 
-. Click *Save* and the changes to the bucket are submitted.
+https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
 
-
-Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. Tags consists of a tag key and a tag value. You can add tags to a bucket so that the tags are applied to objects when they are added to the bucket. You can also change and delete tags and tag values.
-
-Tags are disabled by default in new buckets created by BlueXP. https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-tagging.html[Learn more about tagging from the Amazon S3 documentation^].
-
-image:screenshot-amazon-s3-tags.png["A screenshot showing how to add a new tag key/value pair for a bucket."]
-
-After you add a tag, click *Apply* to save your changes. If you want to add more tags, click *Add new tag*. You can add up to 10 tags per bucket.
+Click *Save* to save the changes to the storage account.
 
 == Change the encryption setting
 
-. In the _Encryption_ section, choose the type of data encryption you want to use to protect access to your data.
-+
+In the _Encryption_ section, you can change the type of data encryption you want to use to protect access to the data in your storage accounts.
+
 [cols=2*,options="header",cols="25,75"]
 |===
 | Data encryption type
@@ -76,26 +65,12 @@ After you add a tag, click *Apply* to save your changes. If you want to add more
 
 | Microsoft-managed keys | By default, Microsoft-managed encryption keys are used to used to encrypt your data. 
 
-| Customer-managed keys | You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have the Key Vault and the Keys so you can add this information in the activation wizard.
+| Customer-managed keys a| You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have created them already so you can select the Key Vault and the Keys in this page.
+
+The keys can be in the same Subscription as the storage account, or you can select a different Subscription.
 
 |===
-+
+
 See the Microsoft Azure documentation for https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption[more information about Microsoft-managed keys^], and https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview[more information about Customer-managed keys^].
 
-. Click *Save* and the changes to the bucket are submitted.
-
-
-
-Server-side encryption enables you to encrypt data at the Amazon S3 destination. Amazon S3 encrypts your data at the object level as it writes it to disk, and it decrypts it for you when you access it. You can change the encryption setting used for future objects when they are added to the bucket.
-
-Encryption is enabled by default using "Amazon S3 managed keys (SSE-S3)" in new buckets created by BlueXP. https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html[Learn more about server-side encryption from the Amazon S3 documentation^].
-
-Alternatively, you can choose to enable encryption using the "AWS Key Management Service key (SSE-KMS)". Encryption is also possible using your own customer-provided keys (SSE-C), but this functionality is unavailable through the BlueXP UI - you'll need to use the Amazon interface.
-
-image:screenshot-amazon-s3-encryption1.png[A screenshot showing how to change the encryption key type used for a bucket.]
-
-If you choose "AWS Key Management Service key (SSE-KMS)", you can choose an AWS KMS key that you've already created, or you can use an AWS KMS key ARN (Amazon Resource Name). 
-
-image:screenshot-amazon-s3-encryption2.png[A screenshot showing how to select alternate encryption settings for a bucket.]
-
-https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html[Learn more about the AWS Key Management Service from the Amazon S3 documentation^] and about https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-mgmt[using customer keys versus AWS keys^].
+Click *Save* to save the changes to the storage account.

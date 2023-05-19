@@ -34,7 +34,7 @@ image:screenshot-add-blob-storage.png[A screenshot showing the Add storage accou
 
 | Subscription | Select the Azure subscription for the new storage account.
 
-| Resource group a| Select an existing resource group for this storage account, or create a new one. 
+| Resource group a| Select an existing resource group for this storage account.
 
 https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal[Learn more about resource groups^].
 
@@ -59,28 +59,30 @@ Additionally, the choice of region can have a billing impact. https://learn.micr
 
 | Performance type a| Select whether you want to use *Standard* or *Premium* performance storage. https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview#types-of-storage-accounts[See the Microsoft documentation for information about Types of storage accounts^].
 
-_Standard_ performance is used for general-purpose v2 storage accounts. This type of account is recommended for most scenarios. 
+* _Standard_ performance is used for general-purpose v2 storage accounts. This type of account is recommended for most scenarios. 
 
-_Premium_ performance is used for scenarios that require low latency. There are three types of premium storage accounts are available: Block blobs, File shares, and Page blobs. 
+* _Premium_ performance is used for scenarios that require low latency. There are three types of premium storage accounts are available: Block blobs, File shares, and Page blobs. 
 
 |===
 
-. In the _Tags_ section, enter up to 10 tag key/value pairs to group your resources. 
+. In the _Tags_ section, you can enter up to 10 tag key/value pairs to group your resources. 
 +
 Tags are metadata that you can use to group resources to identify applications, environments, regions, cloud providers, and more. You can add tags to a storage account so that the tags are applied to objects when they are added to the storage account.
 +
-Tags are disabled by default in new storage account created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
+Tags are disabled by default in new storage accounts created by BlueXP. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-manage-find-blobs[Learn more about tagging from the Microsoft documentation^].
 
-. In the _Encryption_ section, choose the type of data encryption you want to use to protect access to your data.
+. In the _Encryption_ section, choose the type of data encryption you want to use to protect access to the data in the storage account.
 +
 [cols=2*,options="header",cols="25,75"]
 |===
 | Data encryption type
 | Description
 
-| Microsoft-managed keys | By default, Microsoft-managed encryption keys are used to used to encrypt your data. 
+| Microsoft-managed keys | By default, Microsoft-managed encryption keys are used to encrypt your data. 
 
-| Customer-managed keys | You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have the Key Vault and the Keys so you can add this information in the activation wizard.
+| Customer-managed keys a| You can use your own customer-managed keys for data encryption instead of using the default Microsoft-managed encryption keys. If you're planning to use your own customer-managed keys, you'll need to have created them already so you can select the Key Vault and the Keys in this page.
+
+The keys can be in the same Subscription as the storage account, or you can select a different Subscription. 
 
 |===
 +
