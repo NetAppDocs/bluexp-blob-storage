@@ -17,7 +17,7 @@ Once your Azure Blob Storage working environment is available in the Canvas, you
 
 Note that you can't change the storage account name, Azure region, or the performance type of the storage.
 
-The storage account properties you can change include:
+The storage account properties you can change includes:
 
 * The Subscription and Resource Group for the storage account.
 * Add, change, or remove tags for the objects that are added to the storage account.
