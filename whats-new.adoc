@@ -15,7 +15,7 @@ summary: Learn what's new with Azure Blob Storage in BlueXP.
 [.lead]
 Learn what's new with Azure Blob Storage in BlueXP.
 
+// tag::whats-new[]
 == 5 June 2023
-
 include::_whatsnew/2023-06-05.adoc[]
-
+// end::whats-new[]
